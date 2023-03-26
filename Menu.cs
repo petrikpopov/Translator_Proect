@@ -30,26 +30,35 @@ namespace Translator
                 Console.WriteLine("Файл успешно создан!!!");
             }
         }
-
-        static void Main(string[] args)
+        public class Menu
         {
-
-            FAnglRuss fAnglRuss = new FAnglRuss();
-            AddWord addWord = new AddWord();
-            REMOVEWord rEMOVEWord = new REMOVEWord();
-            SearchWord searchWord = new SearchWord();
-            ReplaceWord replaceWord = new ReplaceWord();
-            while (true)
+            public void Print_Menu()
             {
                 Console.WriteLine("Создать словарь --> 1)Англо-русский, 2)Русско-английский\n");
                 Console.WriteLine("3)Добавить слово в словарь\n");
                 Console.WriteLine("4)Удалить слово из словаря\n");
                 Console.WriteLine("5)Найти слово в словаре\n");
                 Console.WriteLine("6)Заменить слово в словаре\n");
+            }
+        }
+        static void Main(string[] args)
+        {
+            Menu menu = new Menu();
+            FAnglRuss fAnglRuss = new FAnglRuss();
+            AddWord addWord = new AddWord();
+            REMOVEWord rEMOVEWord = new REMOVEWord();
+            SearchWord searchWord = new SearchWord();
+            ReplaceWord replaceWord = new ReplaceWord();
+
+            while (true)
+            {
+                menu.Print_Menu();
+
                 int vibor = Convert.ToInt32(Console.ReadLine());
                 if (vibor == 1)
                 {
                     fAnglRuss.AnglDictionary();
+                   
                 }
                 if (vibor == 2)
                 {
